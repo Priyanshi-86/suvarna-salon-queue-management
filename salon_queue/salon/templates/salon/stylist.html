@@ -1,6 +1,0 @@
-{% extends "salon/staff_base.html" %}{% load static %}
-{% block role %}{{ st.name }}{% endblock %}
-{% block mainattr %}data-id="{{ st.pk }}"{% endblock %}
-{% block content %}<section id="cur" class="cur"></section>
-<h2 class="serif" data-t="my_schedule"></h2><div id="sched"></div>{% endblock %}
-{% block scripts %}<script src="{% static 'salon/stylist.js' %}"></script>{% endblock %}

@@ -1,7 +1,0 @@
-{% extends "salon/base.html" %}
-{% block content %}
-<h1 class="serif" data-t="nav_my"></h1>
-<section><h2 class="serif" data-t="current"></h2>{% include "salon/_table.html" with rows=cur full=True %}</section>
-<section><h2 class="serif" data-t="upcoming"></h2>{% include "salon/_table.html" with rows=up full=True %}</section>
-<section><h2 class="serif" data-t="previous"></h2>{% include "salon/_table.html" with rows=prev full=True %}</section>
-{% endblock %}

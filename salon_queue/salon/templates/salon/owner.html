@@ -1,9 +1,0 @@
-{% extends "salon/staff_base.html" %}{% load static %}
-{% block role %}<span data-t="owner_title"></span>{% endblock %}
-{% block content %}<div class="kpis" id="kpis"></div>
-<section class="card cardx"><div class="hd"><h2 class="serif" id="ct"></h2><div class="seg"><button class="on" data-r="day" data-t="today_t"></button><button data-r="month" data-t="this_month"></button></div></div><div id="chart" class="chart"></div></section>
-<h2 class="serif" data-t="perf"></h2><div id="perf" class="cards"></div>
-<h2 class="serif" data-t="upcoming3"></h2><div id="up"></div>
-<h2 class="serif" data-t="cancels_today"></h2><div id="cx"></div>
-{% endblock %}
-{% block scripts %}<script src="{% static 'salon/owner.js' %}"></script>{% endblock %}

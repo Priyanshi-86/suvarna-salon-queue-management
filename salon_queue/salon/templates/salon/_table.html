@@ -1,8 +1,0 @@
-{% load loc %}{% if rows %}<div class="tw"><table class="tbl"><thead><tr>
-{% if full %}<th data-t="token"></th>{% endif %}<th data-t="date"></th><th data-t="time"></th><th data-t="service"></th><th data-t="stylist"></th><th data-t="price"></th>{% if full %}<th data-t="status"></th><th></th>{% endif %}</tr></thead><tbody>
-{% for b in rows %}<tr>{% if full %}<td>{{ b.token }}</td>{% endif %}<td>{{ b.date|date:"d M Y" }}</td><td>{{ b.time|time:"h:i A" }}</td>
-<td>{% for s in b.services.all %}{{ s|loc:"name" }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
-<td>{{ b.stylist.name|default:"—" }}</td><td>₹{{ b.total_price }}</td>
-{% if full %}<td><span class="pill {{ b.status }}" data-t="st_{{ b.status }}"></span></td>
-<td>{% if b.is_active %}<a class="lnk" href="{% url 'status' b.pk %}" data-t="track"></a>{% endif %}</td>{% endif %}</tr>{% endfor %}
-</tbody></table></div>{% else %}<p class="empty" data-t="none_yet"></p>{% endif %}

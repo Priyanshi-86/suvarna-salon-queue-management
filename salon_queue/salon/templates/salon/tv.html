@@ -1,6 +1,0 @@
-{% extends "salon/staff_base.html" %}{% load static %}
-{% block bodyclass %}tvp{% endblock %}
-{% block header %}<header class="tvh"><div class="brand"><span class="mono lg">S</span><span class="serif">Suvarna Salon</span></div><div id="clock" class="serif"></div></header>{% endblock %}
-{% block content %}<table class="tvt"><thead><tr><th data-t="position"></th><th data-t="token"></th><th data-t="client"></th><th data-t="service"></th><th data-t="stylist"></th><th data-t="est_time"></th></tr></thead><tbody id="rows"></tbody></table>
-<footer class="tick"><span data-t="walkins_ticker"></span></footer>{% endblock %}
-{% block scripts %}<script src="{% static 'salon/tv.js' %}"></script>{% endblock %}
