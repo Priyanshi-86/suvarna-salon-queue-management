@@ -1,0 +1,17 @@
+{% extends "salon/staff_base.html" %}{% load static %}
+{% block role %}<span data-t="reception"></span>{% endblock %}
+{% block content %}
+<div class="tabsx"><button class="on" data-tab="q" data-t="queue_today"></button><button data-tab="n" data-t="new_booking"></button></div>
+<div id="tab-q" class="split"><div id="queue"></div><aside><h2 class="serif" data-t="stylists"></h2><div id="stl"></div></aside></div>
+<div id="tab-n" hidden class="form2">
+<div class="cols"><label class="fld"><span data-t="client_name"></span><input id="nm" autocomplete="off"></label>
+<label class="fld"><span data-t="age"></span><input id="age" type="number" min="1" max="120" inputmode="numeric"></label>
+<div class="fld"><span data-t="gender"></span><div class="chips" id="gen"><button class="chip" data-g="f" data-t="g_f"></button><button class="chip" data-g="m" data-t="g_m"></button><button class="chip" data-g="o" data-t="g_o"></button></div></div>
+<label class="fld"><span data-t="phone"></span><input id="ph" inputmode="tel" autocomplete="off"></label></div>
+<div class="fld"><span data-t="choose_service"></span><div class="chips" id="svcs"></div></div>
+<label class="fld"><span data-t="date"></span><input id="dt" type="date"></label>
+<div class="fld"><span data-t="choose_time"></span><div id="slots" class="slots"></div></div>
+<div class="fld"><span data-t="choose_stylist"></span><div id="stys"></div></div>
+<div class="bar2"><b id="total"></b><button id="book" class="cta" data-t="confirm"></button></div></div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'salon/reception.js' %}"></script>{% endblock %}

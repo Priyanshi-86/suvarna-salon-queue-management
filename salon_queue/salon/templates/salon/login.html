@@ -1,0 +1,11 @@
+{% load static %}<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Suvarna Salon · Login</title>
+<link rel="stylesheet" href="{% static 'salon/style.css' %}"><link rel="stylesheet" href="{% static 'salon/staff.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></head>
+<body class="staff"><header class="top"><a class="brand" href="/"><span class="mono">S</span><span class="serif">Suvarna</span></a>
+<div class="lang"><button data-lang="en">EN</button><button data-lang="hi">हिं</button><button data-lang="gu">ગુ</button></div></header>
+<main><form method="post" class="pinf loginf">{% csrf_token %}<h1 class="serif" data-t="login_title">Welcome back</h1><p class="sm" data-t="login_subtitle">Sign in to your staff workspace</p>
+{% if error %}<p class="note">{{ error }}</p>{% endif %}
+<label class="fld"><span data-t="username">Username</span><input name="username" autocomplete="username" required autofocus></label>
+<label class="fld"><span data-t="password">Password</span><input name="password" type="password" autocomplete="current-password" required></label>
+<button class="cta" type="submit" data-t="login_btn">Log in</button></form></main><script src="{% static 'salon/app.js' %}"></script><script src="{% static 'salon/staff.js' %}"></script></body></html>

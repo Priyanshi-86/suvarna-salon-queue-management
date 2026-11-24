@@ -1,0 +1,14 @@
+{% extends "salon/base.html" %}{% load static %}
+{% block mainattr %}data-id="{{ pk }}"{% endblock %}
+{% block content %}
+<div id="banner" class="banner" hidden></div>
+<section class="stat"><p class="sm" data-t="your_token"></p><div id="tok" class="tok serif">–</div><p id="pos" class="pos"></p>
+<div class="ringw"><svg viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="54"/><circle id="rf" class="rf" cx="60" cy="60" r="54"/></svg>
+<div class="rt"><b id="wait">–</b><span id="waitl"></span></div></div>
+<p id="msg" class="pos" hidden></p><p id="info" class="sm"></p></section>
+<button id="cancelBtn" class="ghost wide" data-t="cancel_spot"></button>
+<div class="modal" id="cm"><div class="sheet"><h3 class="serif" data-t="cancel_q"></h3><div class="btns">
+<button class="ghost" id="keep" data-t="keep"></button><button class="pick" id="yes" data-t="yes_cancel"></button></div></div></div>
+<div id="turn" class="turn" hidden><p class="serif big" data-t="your_turn"></p><p id="goto" class="serif"></p></div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'salon/status.js' %}"></script>{% endblock %}
