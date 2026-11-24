@@ -1,0 +1,17 @@
+{% extends "salon/base.html" %}
+{% block content %}
+<section class="hero"><div class="logo"><span class="serif">S</span></div>
+<h1 class="serif">Suvarna Salon</h1><p class="tag" data-t="tagline"></p>
+<p class="meta"><span>{{ phone }}</span><span>{{ area }}</span></p>
+<span class="badge {% if is_open %}open{% else %}closed{% endif %}" data-t="{% if is_open %}open_badge{% else %}closed_badge{% endif %}"></span>
+<a class="cta" href="{% url 'book' %}" data-t="book_btn"></a>
+<div class="staff-entry" style="margin-top:18px;text-align:center">
+  <a class="lnk" href="{% url 'login' %}" style="text-decoration:none">Staff Login</a>
+  <span class="sm" style="display:block;margin-top:4px">For salon team members</span>
+</div>
+</section>
+{% if current %}<section class="visit"><div><p class="sm" data-t="your_visit"></p><b class="big">{{ current.token }}</b>
+<span class="pill {{ current.status }}" data-t="st_{{ current.status }}"></span></div>
+<a class="pick" href="{% url 'status' current.pk %}" data-t="track"></a></section>{% endif %}
+<section><h2 class="serif" data-t="history"></h2>{% include "salon/_table.html" with rows=prev full=False %}</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "salon/base.html" %}{% load static %}
+{% block content %}
+<div class="dots"><i></i><i></i><i></i><i></i></div>
+<section class="step" data-step="1"><h1 class="serif" data-t="choose_service"></h1><div id="svcs" class="grid"></div></section>
+<section class="step" data-step="2" hidden><h1 class="serif" data-t="choose_time"></h1><div id="dates" class="dates"></div>
+<p id="closedNote" class="note" hidden></p><div id="slots" class="slots"></div></section>
+<section class="step" data-step="3" hidden><h1 class="serif" data-t="choose_stylist"></h1><div id="stys"></div></section>
+<section class="step" data-step="4" hidden><h1 class="serif" data-t="confirm"></h1><div id="sumry" class="card"></div>
+<label class="fld"><span data-t="your_name"></span><input id="nm" autocomplete="name"></label>
+<label class="fld"><span data-t="phone"></span><input id="ph" inputmode="tel" autocomplete="tel"></label>
+<p id="err" class="note" hidden></p></section>
+<div class="bar"><button id="back" class="ghost" data-t="back"></button><span id="tot"></span><button id="next" class="pick"></button></div>
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+{{ boot|json_script:"boot" }}
+{% endblock %}
+{% block scripts %}<script src="{% static 'salon/book.js' %}"></script>{% endblock %}

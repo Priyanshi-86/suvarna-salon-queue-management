@@ -1,0 +1,4 @@
+{% extends "salon/staff_base.html" %}
+{% block role %}<span data-t="stylists"></span>{% endblock %}
+{% block content %}<h1 class="serif" data-t="pick_stylist"></h1>
+<div class="chips">{% for s in sts %}<a class="cta pickc" href="{% url 'stylist' s.name %}">{{ s.name }}</a>{% endfor %}</div>{% endblock %}
